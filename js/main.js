@@ -1,35 +1,27 @@
-function turno() {
-  return prompt("Turnos:: Elegi que dia queres venir:");
+function turno(dia, hora) {
+  this.dia = dia;
+  this.hora = hora;
+
+  this.hablar = () => {
+    console.log(
+      "Tu turno queda asi: " +
+        "" +
+        this.dia +
+        "" +
+        ", a las " +
+        "" +
+        this.hora +
+        "" +
+        "hs."
+    );
+  };
 }
 
-function agenda(dia) {
-  return "El dia que elegistes es " + dia;
-}
-
-function salida(dia) {
-  alert(dia);
-}
-
-salida(agenda(turno()));
-
-function tiempo() {
-  return prompt("Listo. Ahora elegi a que hora queres venir:");
-}
-
-function reloj(hora) {
-  return "La hora que elegistes es " + hora;
-}
-
-function salida(hora) {
-  alert(hora);
-}
-
-salida(reloj(tiempo()));
-
-alert(
-  "Tu turno queda asi: " +
-    "salida(agenda(turno()))" +
-    "salida(reloj(tiempo())))"
+const turno1 = new turno(
+  prompt("Ingresa que dia queres atenderte:"),
+  prompt("Ingresa a que hora podrias atenderte:")
 );
 
-alert("Gracias. Te espero en ese horario. Saludos");
+turno1.hablar();
+alert("Llama por telefono al 555-6666 para reconfirmar");
+alert("Gracias!");
